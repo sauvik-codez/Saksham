@@ -21,69 +21,72 @@ a {
 .navbar {
     background-color: #164868;
     color: rgb(231, 229, 229);
-    padding: 10px 0 10px 0;
-    position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.nav-container{
+.nav-container {
+    height: 65px;
+    margin: 0;
+    padding: 0;
     display: flex;
+    flex-wrap: wrap; 
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+.nav-left {
+    margin-left: 15px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-center {
+    height: 60px;
+    margin-left: 20px;
+    flex: 1 1 auto;
+    display: inline-block;
+}
+
+#Saksham_logo {
+    padding: 0;
+    margin: 0;
+    height: 60px;
 }
 
 .nav-right {
     display: flex;
-    justify-content: space-between;
-    margin-left: 485px;
-}
-.nav-center{
-padding: 0;
-margin-left: 10px;
-border: 0;
-margin-left: 20px;
-}
-
-#Saksham_logo{
-    padding: 0;
-    height: 50px;
-}
-.nav-left,.nav-right{
-padding-top: 15px;
-}
-
-.nav-left:hover,.nav-right :hover{
-    color: #e6b800;
-    font-size: 18px;
-    transition-property:all ;
-    transition: 0.5s;
-}
-
-.nav-left{
-    margin: 0 0 0 15px;
-    display: inline;
-}
-
-.nav-right{
-    display: inline;
-    display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     font-weight: lighter;
     margin-right: 15px;
+    gap: 1.5rem;
+    flex-wrap: wrap;
 }
 
 .nav-right a {
-    margin-left: 1.5rem;
     font-weight: 500;
     transition: color 0.3s;
+    white-space: nowrap;
 }
 
+.nav-left:focus,
+.nav-right :focus {
+    color: #e6b800;
+    font-size: 17px;
+    transition-property: all;
+    transition: 0.5s;
+}
 
 .logo {
     display: inline-block;
     font-size: 1.5rem;
     font-weight: bold;
     color: white;
+    height: 60px;
 }
 
 .user-link {
@@ -100,8 +103,9 @@ padding-top: 15px;
 
 /* Header Styles */
 .header {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                url('https://images.unsplash.com/photo-1593113630400-ea4288922497?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('https://images.unsplash.com/photo-1593113630400-ea4288922497?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80')
+        no-repeat center center/cover;
     color: white;
     padding: 6rem 2rem;
     text-align: center;
@@ -127,6 +131,7 @@ padding-top: 15px;
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -149,6 +154,7 @@ padding-top: 15px;
     border-radius: 5px;
     font-weight: 600;
     transition: all 0.3s;
+    cursor: pointer;
 }
 
 .btn-primary {
@@ -251,6 +257,7 @@ padding-top: 15px;
     font-size: 0.8rem;
     font-weight: bold;
     color: white;
+    white-space: nowrap;
 }
 
 .alert-badge.urgent {
@@ -268,6 +275,7 @@ padding-top: 15px;
 .alert-time {
     color: #7f8c8d;
     font-size: 0.9rem;
+    white-space: nowrap;
 }
 
 /* Chatbot Styles */
@@ -392,7 +400,8 @@ padding-top: 15px;
     font-size: 1.2rem;
 }
 
-.footer-section p, .footer-section a {
+.footer-section p,
+.footer-section a {
     margin-bottom: 0.5rem;
     display: block;
     color: #ddd;
@@ -420,33 +429,52 @@ padding-top: 15px;
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .nav-right {
+        margin-left: 0;
+        justify-content: flex-end;
+        gap: 1rem;
+    }
+
+    .nav-center {
+        margin-left: 10px;
+    }
+}
+
 @media (max-width: 768px) {
     .nav-right {
         display: none;
     }
-    
+
     .hamburger {
         display: block;
     }
-    
+
     .animated-title {
         font-size: 2rem;
     }
-    
+
     .header-buttons {
         flex-direction: column;
         align-items: center;
+        gap: 0.75rem;
     }
-    
+
     .alert-item {
         flex-direction: column;
         align-items: flex-start;
         gap: 0.5rem;
     }
-    
+
     .chatbot-container {
         width: 300px;
         height: 400px;
+        right: 10px;
+        bottom: 70px;
+    }
+
+    .nav-container {
+        justify-content: space-between;
     }
 }
 
@@ -454,16 +482,35 @@ padding-top: 15px;
     .nav-container {
         padding: 0 1rem;
     }
-    
+
     .header {
         padding: 4rem 1rem;
     }
-    
-    .features, .alerts {
+
+    .features,
+    .alerts {
         padding: 3rem 1rem;
     }
-    
+
     .footer-container {
         grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+
+    .alert-item {
+        padding: 1rem;
+    }
+
+    .header-content p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .header-buttons {
+        gap: 0.5rem;
     }
 }
