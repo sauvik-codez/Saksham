@@ -41,8 +41,6 @@ a {
 .nav-left {
     margin-left: 15px;
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
 }
 
 .nav-center {
@@ -50,6 +48,14 @@ a {
     margin-left: 20px;
     flex: 1 1 auto;
     display: inline-block;
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+.logo_text{
+    margin-top:1em;
+    margin-left:0.4em;
 }
 
 #Saksham_logo {
@@ -68,13 +74,12 @@ a {
 }
 
 .nav-right a {
-    font-weight: 500;
+    font-weight: bold;
     transition: color 0.3s;
     white-space: nowrap;
 }
 
-.nav-left:focus,
-.nav-right :focus {
+.nav-right a:focus,.nav-left a:focus {
     color: #e6b800;
     font-size: 17px;
     transition-property: all;
