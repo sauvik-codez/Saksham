@@ -1,26 +1,40 @@
 # Saksham
-A complete responsive website designed to spread disaster awareness, provide safety guidelines, and offer quick access to verified emergency helpline numbers.
 
-🚀 Features:::
+Saksham is a responsive website aimed at spreading disaster awareness, providing safety guidelines, and offering quick access to verified emergency helpline numbers.
 
-✅ Home page with disaster awareness content
+## Features
 
-✅ Helpline page with verified emergency contacts
+- **Home Page**: Displays disaster awareness content.
+- **Helpline Page**: Contains verified emergency contacts.
+- **News/Updates Section**: Provides information on recent disasters.
+- **Responsive Design**: Ensures compatibility across desktop and mobile devices.
+- **Easy Customization**: Allows for straightforward updates and modifications.
 
-✅ News/updates section for recent disasters
+## Usage
 
-✅ Responsive design (works on desktop & mobile)
+To update the helpline numbers:
 
-✅ Easy to customize and update
+1. Navigate to `helpline.html`.
+2. Edit the content as needed to reflect the most current and accurate information.
 
-📖 Usage:::
+## Technologies Used
 
-Update helpline.html with new or local emergency contact numbers.
+- **HTML5**: For structuring the content.
+- **CSS3**: For styling and layout.
+- **JavaScript**: For interactive elements.
 
-Add disaster-related updates/news in the news section.
+## Contributing
 
-Customize styles in style.css as needed.
+Contributions are welcome! To contribute:
 
-🤝 Contributing
+1. Fork the repository.
+2. Clone your forked repository to your local machine.
+3. Create a new branch for your changes.
+4. Make your modifications.
+5. Commit your changes with a descriptive message.
+6. Push your changes to your forked repository.
+7. Open a pull request to the main repository.
 
-Contributions are welcome! Feel free to open issues or submit pull requests.
+## License
+
+This project is licensed under the MIT License.
